@@ -1,7 +1,8 @@
 public class Main {
 
     public static void main(String[] args) {
-        Person father = new PersonBuilder()
+
+        Person father = Person.builder()
                 .setName("Petr")
                 .setSurname("Ivanov")
                 .setAge(44)
@@ -16,13 +17,13 @@ public class Main {
 
         Person son = father.newChildBuilder()
                 .setName("Ivan")
+                .setAge(1)
                 .build();
 
         son.happyBirthday();
         System.out.println("Сын" + son);
 
-
-        Person brother = new PersonBuilder()
+        Person brother = Person.builder()
                 .setName("Sidor")
                 .setSurname("Ivanov")
                 .setAge(47)
@@ -36,7 +37,7 @@ public class Main {
         System.out.println("Брат" + brother);
         System.out.println("Есть у брата данные об адресе? " + brother.hasAddress());
 
-        Person frend = new PersonBuilder()
+        Person frend = Person.builder()
                 .setName("Dima")
 //                .setSurname("Kozlov")
                 .setAge(44)
@@ -45,7 +46,7 @@ public class Main {
 
         System.out.println("Друг" + frend);
 
-        Person svat = new PersonBuilder()
+        Person svat = Person.builder()
                 .setName("Roma")
                 .setSurname("Smirnov")
                 .setAge(-3)
